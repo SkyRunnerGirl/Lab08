@@ -277,16 +277,18 @@ class Movie {
 }
 
 class List {
-  constructor(movies) {
+  constructor() {       //post-Walkthrough: removed movies as parameter for constructor, not needed
     this.movies = [];
   }
   addMovie(movie) {
     this.movies.push(movie);
   }
   displayMovies() {
+    let movieInfo = "";   //post-Walkthrough: created movieInfo variable to hold title and director info for each movie
     for (let i = 0; i < this.movies.length; i++) {
-      return this.movies;
+      movieInfo += `${this.movies[i].title}, directed by ${this.movies[i].director}\n`;   //post-Walkthrough: created this string to accumulate each item in Movies array on new line (\n)
     }
+    return movieInfo    //post-Walkthrough: created outside of for loop to return the info in Movies array
   }
 }
 let movie1 = new Movie('Jurassic Park', 'Steven Spielberg');
